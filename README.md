@@ -5,8 +5,7 @@ HouseListing is a React-based web application for browsing and viewing house lis
 ## Installation
 
 1. Clone the repository:   ```
-   git clone https://github.com/your-username/HouseListing.git
-   cd HouseListing   ```
+   git clone
 
 2. Install dependencies:   ```
    npm install   ```
