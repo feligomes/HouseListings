@@ -1,6 +1,5 @@
 import React from 'react';
 import { Typography, Button, Box } from '@mui/material';
-import RefreshIcon from '@mui/icons-material/Refresh';
 import { useNavigate } from 'react-router-dom';
 
 const ErrorWithRefresh = ({ message }) => {
@@ -19,7 +18,6 @@ const ErrorWithRefresh = ({ message }) => {
       <Button
         variant="contained"
         color="primary"
-        startIcon={<RefreshIcon />}
         onClick={handleRefresh}
         sx={{ mt: 2 }}
       >
