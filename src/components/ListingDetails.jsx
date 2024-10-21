@@ -56,7 +56,7 @@ export default function SavedListingDetails() {
           </Typography>
         </Grid>
         <Grid item xs={12} md={8}>
-          <Paper elevation={3}>
+          <Box>
             <img
               src={getRandomImage()}
               alt="Property"
@@ -67,7 +67,7 @@ export default function SavedListingDetails() {
                 objectFit: "cover",
               }}
             />
-          </Paper>
+          </Box>
         </Grid>
         <Grid item xs={12} md={4}>
           <Paper elevation={3} sx={{ p: 2 }}>
@@ -76,8 +76,7 @@ export default function SavedListingDetails() {
             </Typography>
             <Divider sx={{ my: 2 }} />
             <Typography variant="body1" gutterBottom>
-              {2} Beds | {3} Baths |{" "}
-              {2000} Sq. Ft.
+              {2} Beds | {3} Baths | {2000} Sq. Ft.
             </Typography>
             <Divider sx={{ my: 2 }} />
             <Calendar openHouses={listingData.openHouses} />
@@ -133,8 +132,7 @@ export default function SavedListingDetails() {
                 <Typography variant="body2">
                   Min. Down Pymt:{" "}
                   <Box component="span" fontWeight="bold">
-                  10%
-
+                    10%
                   </Box>
                 </Typography>
               </Grid>
