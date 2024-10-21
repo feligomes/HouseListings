@@ -19,6 +19,15 @@ To start the development server:
 npm run dev
 ``` 
 
+## Important considerations
+
+- The API fails on purpose this is to demostrate the error handling working.
+- A lot of mocked data and random data is used to populate the page because of the limited data we receive from the API. Such as missing images and details.
+- The project mentioned not using any extra libraries but I did use MUI since it can really improve the look and feel of the project. Still this could be easily removed if needed.
+- This project was done in the time span of 4 hours.
+- So far the avaialbe dates is only informative since we don't have an endpoint to actually reserve those dates. 
+- Since random data was used the images and some details may change on each reload, this would not happen in a real application with more complete endpoints. 
+
 ## Features
 
 - Landing page with a list of house listings
