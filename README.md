@@ -35,3 +35,7 @@ Before running this project, make sure you have the following installed:
 ## Running the Application
 
 To start the development server:
+
+```
+npm run dev
+``` 
