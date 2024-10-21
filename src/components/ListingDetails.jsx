@@ -55,7 +55,7 @@ export default function SavedListingDetails() {
             {listingData.city}, {listingData.state} {listingData.zipCode}
           </Typography>
         </Grid>
-        <Grid item xs={12} md={8}>
+        <Grid item xs={12} md={6} lg={8} xl={8}>
           <Box>
             <img
               src={getRandomImage()}
@@ -64,12 +64,13 @@ export default function SavedListingDetails() {
                 width: "100%",
                 height: "auto",
                 maxHeight: "600px",
+                minHeight : "500px",
                 objectFit: "cover",
               }}
             />
           </Box>
         </Grid>
-        <Grid item xs={12} md={4}>
+        <Grid item xs={12} md={6} lg={4} xl={4}>
           <Paper elevation={3} sx={{ p: 2 }}>
             <Typography variant="h5" gutterBottom>
               ${listingData.price.toLocaleString()}
@@ -79,6 +80,9 @@ export default function SavedListingDetails() {
               {2} Beds | {3} Baths | {2000} Sq. Ft.
             </Typography>
             <Divider sx={{ my: 2 }} />
+            <Typography variant="subtitle1" sx={{ fontWeight: 700, mb: 2 }}>
+              Available Dates
+            </Typography>
             <Calendar openHouses={listingData.openHouses} />
           </Paper>
         </Grid>
