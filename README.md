@@ -11,7 +11,7 @@ This project demonstrates a modern React application with features such as listi
 1. Clone the repository:
    ```
    git clone https://github.com/feligomes/HouseListings.git
-   cd HouseListing
+   cd HouseListings
    ```
 
 2. Install dependencies:
