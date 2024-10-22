@@ -48,10 +48,10 @@ export default function SavedListingDetails() {
     <Box sx={{ maxWidth: 1200, margin: "0 auto", padding: 2 }}>
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <Typography variant="h4" component="h1" gutterBottom>
+          <Typography variant="h4" component="h1">
             {listingData.address}
           </Typography>
-          <Typography variant="subtitle1" gutterBottom>
+          <Typography variant="subtitle1" sx={{ color: "#6c6c6c" }}>
             {listingData.city}, {listingData.state} {listingData.zipCode}
           </Typography>
         </Grid>
@@ -64,7 +64,7 @@ export default function SavedListingDetails() {
                 width: "100%",
                 height: "auto",
                 maxHeight: "600px",
-                minHeight : "500px",
+                minHeight: "500px",
                 objectFit: "cover",
               }}
             />

@@ -1,8 +1,8 @@
 import React from 'react';
-import LandingPage from '../components/LandingPage';
+import Listings from '../components/Listings';
 
-const SavedListings = () => {
-  return <LandingPage />;
+const SavedListingsPage = () => {
+  return <Listings />;
 };
 
-export default SavedListings;
+export default SavedListingsPage;

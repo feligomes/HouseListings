@@ -16,7 +16,7 @@ const getRandomLabel = () => {
   return Math.random() < 0.5 ? "COMPASS COMING SOON" : "LISTED BY COMPASS";
 };
 
-const SavedListingsPage = () => {
+const Listings = () => {
   const [listings, setListings] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -252,4 +252,4 @@ const SavedListingsPage = () => {
   );
 };
 
-export default SavedListingsPage;
+export default Listings;

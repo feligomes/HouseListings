@@ -1,13 +1,9 @@
 import React from 'react';
 import { Typography, Button, Box } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
 
-const ErrorWithRefresh = ({ message }) => {
-  const navigate = useNavigate();
-
+const ErrorWithRefresh = ({ message, onRefresh }) => {
   const handleRefresh = () => {
-    navigate('/', { replace: true });
-    window.location.reload();
+    onRefresh();
   };
 
   return (
