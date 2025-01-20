@@ -2,9 +2,11 @@
 
 HouseListing is a small React-based web application working as a showcase of technologies. It displays a listing of saved house listings and allows users to view the available dates for each one.
 
+🔗 **Live Demo**: [https://feligomes.github.io/HouseListings/](https://feligomes.github.io/HouseListings/)
+
 ## Project Description
 
-This project demonstrates a modern React application with features such as listing display, detailed views, error handling, and integration with a mock API. It's designed to showcase best practices in React development, state management, and UI design.
+This project demonstrates a modern React application with features such as listing display, detailed views, and a calendar interface for open house dates. It's designed to showcase best practices in React development, state management, and UI design.
 
 ## Installation
 
@@ -22,56 +24,49 @@ This project demonstrates a modern React application with features such as listi
 ## Running the Application
 
 To start the development server:
-
 ```
 npm run dev
 ```
 
-## API Information
-
-This project uses a mock API that intentionally fails at times to demonstrate error handling. The API provides limited data, which is supplemented with randomly generated information for a more complete user experience.
+To build for production:
+```
+npm run build
+```
 
 ## Project Structure
-
 ```
 src/
-├── components/
-├── pages/
-├── App.jsx
-└── main.jsx
+├── components/     # React components
+├── data/          # Mock data and utilities
+├── pages/         # Page components
+├── utils/         # Utility functions
+├── App.jsx        # Main app component
+└── main.jsx       # Entry point
 ```
-
-## Important considerations
-
-- The API fails on purpose to demonstrate the error handling functionality.
-- Mocked data and random data are used to populate the page due to limited data from the API.
-- MUI is used to improve the look and feel of the project, though it can be removed if needed.
-- This project was completed in approximately 4 hours.
-- The available dates feature is currently informative only, as there's no endpoint to reserve dates.
-- Random data usage may cause images and details to change on reload, which wouldn't occur in a real application with complete endpoints.
 
 ## Features
 
-- Landing page with a list of house listings
-- Detailed view for individual house listings
-- Responsive design for various screen sizes
-- Error handling with refresh button
-- Display of available dates for each listing
+* Landing page with a grid of house listings
+* Detailed view for individual house listings
+* Interactive calendar for open house dates
+* Responsive design for various screen sizes
+* Modern Material-UI components
+* Consistent data generation for listings
 
 ## Technologies Used
 
-- React
-- Vite
-- React Router
-- CSS Modules
-- MUI (Material-UI)
+* React 18
+* Vite
+* React Router
+* Material-UI (MUI)
+* GitHub Pages for deployment
 
-## Prerequisites
+## Development Notes
 
-Before running this project, make sure you have the following installed:
-
-- Node.js (v14 or later)
-- npm
+* The application uses generated mock data to simulate a real estate listings database
+* Images are randomly generated for demonstration purposes
+* All data is consistent between page refreshes due to deterministic generation
+* The project is set up for automatic deployment to GitHub Pages
 
 ## Contributing
 
@@ -79,4 +74,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.

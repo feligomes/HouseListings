@@ -5,7 +5,7 @@ import SavedListingDetailsPage from './pages/SavedListingDetails';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/HouseListings">
       <Routes>
         <Route path="/saved-listings" element={<SavedListingsPage />} />
         <Route path="/saved-listing/:id" element={<SavedListingDetailsPage />} />
