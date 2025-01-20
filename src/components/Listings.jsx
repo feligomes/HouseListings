@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
   Card,
   CardContent,
@@ -8,44 +8,15 @@ import {
   Box,
   Divider,
 } from "@mui/material";
-import Spinner from "./Spinner";
-import ErrorWithRefresh from "./ErrorWithRefresh";
 import { Link } from "react-router-dom";
 import { getRandomImage } from "../utils/imageUtils";
+import { mockListings } from "../data/mockData";
+
 const getRandomLabel = () => {
   return Math.random() < 0.5 ? "COMPASS COMING SOON" : "LISTED BY COMPASS";
 };
 
 const Listings = () => {
-  const [listings, setListings] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    fetchListings();
-  }, []);
-
-  const fetchListings = async () => {
-    try {
-      setLoading(true);
-      setError(null);
-      const response = await fetch("/api/saved-listings");
-      if (!response.ok) {
-        throw new Error("Failed to fetch listings");
-      }
-      const data = await response.json();
-      setListings(data);
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  if (loading) return <Spinner />;
-  if (error)
-    return <ErrorWithRefresh message={error} onRefresh={fetchListings} />;
-
   return (
     <Container maxWidth={"xl"} sx={{ py: 8, px: { xs: 2, sm: 3, md: 4 } }}>
       <Box sx={{ mb: 4 }}>
@@ -64,7 +35,7 @@ const Listings = () => {
         </Typography>
       </Box>
       <Grid container spacing={3}>
-        {listings.map((listing) => (
+        {mockListings.map((listing) => (
           <Grid item key={listing.id} xs={12} sm={12} md={6} lg={4} xl={3}>
             <Link
               to={`/saved-listing/${listing.id}`}
@@ -178,7 +149,7 @@ const Listings = () => {
                           variant="body2"
                           sx={{ fontSize: "0.75rem" }}
                         >
-                          {4}
+                          {listing.bedrooms}
                         </Typography>
                         <Typography
                           variant="body2"
@@ -204,7 +175,7 @@ const Listings = () => {
                           variant="body2"
                           sx={{ fontSize: "0.75rem" }}
                         >
-                          {3}
+                          {listing.bathrooms}
                         </Typography>
                         <Typography
                           variant="body2"

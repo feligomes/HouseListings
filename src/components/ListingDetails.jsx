@@ -1,48 +1,31 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Calendar from "./Calendar";
-import Spinner from "./Spinner";
-import ErrorWithRefresh from "./ErrorWithRefresh";
 import { Button, Grid, Typography, Box, Paper, Divider } from "@mui/material";
 import { getRandomImage } from "../utils/imageUtils";
+import { mockListings } from "../data/mockData";
 
 export default function SavedListingDetails() {
-  const [loading, setLoading] = useState(true);
-  const [listingData, setListingData] = useState(null);
-  const [error, setError] = useState(null);
   const { id } = useParams();
   const navigate = useNavigate();
-
-  useEffect(() => {
-    fetchListingData(id);
-  }, [id]);
-
-  const fetchListingData = async (id) => {
-    try {
-      setLoading(true);
-      setError(null);
-      const response = await fetch(`/api/saved-listings/${id}`);
-      if (!response.ok) {
-        throw new Error("Failed to fetch listing data");
-      }
-      const data = await response.json();
-      setListingData(data);
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  if (loading) return <Spinner />;
-  if (error)
+  
+  const listingData = mockListings.find(l => l.id === id);
+  
+  if (!listingData) {
     return (
-      <ErrorWithRefresh
-        message={error}
-        onRefresh={() => fetchListingData(id)}
-      />
+      <Box sx={{ maxWidth: 1200, margin: "0 auto", padding: 2 }}>
+        <Typography variant="h4" color="error">Listing not found</Typography>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => navigate("/")}
+          sx={{ mt: 2 }}
+        >
+          Back to Saved Listings
+        </Button>
+      </Box>
     );
-  if (!listingData) return null;
+  }
 
   return (
     <Box sx={{ maxWidth: 1200, margin: "0 auto", padding: 2 }}>
@@ -77,7 +60,7 @@ export default function SavedListingDetails() {
             </Typography>
             <Divider sx={{ my: 2 }} />
             <Typography variant="body1" gutterBottom>
-              {2} Beds | {3} Baths | {2000} Sq. Ft.
+              {listingData.bedrooms} Beds | {listingData.bathrooms} Baths | {2000} Sq. Ft.
             </Typography>
             <Divider sx={{ my: 2 }} />
             <Typography variant="subtitle1" sx={{ fontWeight: 700, mb: 2 }}>
